@@ -20,7 +20,7 @@ function useFetchLazy<T = unknown>(): {
       setError(error);
     }
     const timeout = setTimeout(() => setLoading(false), 200);
-
+    // increase loading time to avoid blinking data
     return () => {
       clearTimeout(timeout);
     };
