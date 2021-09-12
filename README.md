@@ -1,4 +1,4 @@
-# WhatsInParis
+# SWAPI Rebels Alliance Search System
 
 Quick project using [SWAPI](https://swapi.dev/)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
