@@ -13,6 +13,7 @@ import FetchDataNameLink from "./FetchDataNameLink";
 import DataTypeIcon from "./DataTypeIcon";
 import ErrorComponent from "./ErrorComponent";
 import HandleFavorite from "./HandleFavorite";
+import Image from "./Image";
 
 export {
   Form,
@@ -30,4 +31,5 @@ export {
   DataTypeIcon,
   ErrorComponent,
   HandleFavorite,
+  Image,
 };

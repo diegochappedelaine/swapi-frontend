@@ -1,11 +1,5 @@
-import { Container } from "components";
-import {
-  Stack,
-  Heading,
-  Image,
-  Box,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Container, Image } from "components";
+import { Stack, Heading, Box, useColorModeValue } from "@chakra-ui/react";
 import { Destroyer } from "assets";
 
 const HeroBanner = () => {
