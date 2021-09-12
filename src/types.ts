@@ -147,3 +147,5 @@ export type Sharship = {
 export interface GetStarships extends SwapiResponseScheme {
   results: Sharship[];
 }
+
+export type SearchResult = [{ title?: string; name?: string; url: string }];
