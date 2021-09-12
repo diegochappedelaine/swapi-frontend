@@ -13,16 +13,18 @@ const HomePage = () => {
       <Form handleSubmit={fetchData} />
       {loading && <div>Loading...</div>}
       {error && <div>Error</div>}
-      {data?.map((element, index) => {
-        const { id, dataType } = retreiveDataTypeAndIdFromUrl(element.url);
-        return (
-          <li key={index}>
-            <Link to={`/${dataType}/${id}`}>
-              {element?.name || element?.title}
-            </Link>
-          </li>
-        );
-      })}
+      <ul>
+        {data?.map((element, index) => {
+          const { id, dataType } = retreiveDataTypeAndIdFromUrl(element.url);
+          return (
+            <li key={index}>
+              <Link to={`/${dataType}/${id}`}>
+                {element?.name || element?.title}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

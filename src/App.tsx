@@ -7,6 +7,12 @@ import {
   SpeciePage,
   StarshipPage,
   VehiclePage,
+  CharactersListPage,
+  FilmsListPage,
+  PlanetsListPage,
+  SpeciesListPage,
+  StarshipsListPage,
+  VehiclesListPage,
 } from "pages";
 
 const App = () => {
@@ -18,6 +24,12 @@ const App = () => {
       <Route path="/starships/:id" component={StarshipPage} exact />
       <Route path="/people/id" component={CharacterPage} exact />
       <Route path="/species/:id" component={SpeciePage} exact />
+      <Route path="/peoples" component={CharactersListPage} exact />
+      <Route path="/films" component={FilmsListPage} exact />
+      <Route path="/planets" component={PlanetsListPage} exact />
+      <Route path="/species" component={SpeciesListPage} exact />
+      <Route path="/starships" component={StarshipsListPage} exact />
+      <Route path="/vehicles" component={VehiclesListPage} exact />
       <Route path="/" component={HomePage} />
     </Switch>
   );

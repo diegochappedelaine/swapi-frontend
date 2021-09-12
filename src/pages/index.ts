@@ -1,10 +1,17 @@
 import HomePage from "./HomePage";
-import CharacterPage from "./CharacterPage";
-import FilmPage from "./FilmPage";
-import PlanetPage from "./PlanetPage";
-import SpeciePage from "./SpeciePage";
-import StarshipPage from "./StarshipPage";
-import VehiclePage from "./VehiclePage";
+import CharacterPage from "./DataPage/CharacterPage";
+import FilmPage from "./DataPage/FilmPage";
+import PlanetPage from "./DataPage/PlanetPage";
+import SpeciePage from "./DataPage/SpeciePage";
+import StarshipPage from "./DataPage/StarshipPage";
+import VehiclePage from "./DataPage/VehiclePage";
+
+import CharactersListPage from "./ListPage/CharactersPage";
+import FilmsListPage from "./ListPage/FilmsPage";
+import PlanetsListPage from "./ListPage/PlanetsPage";
+import SpeciesListPage from "./ListPage/SpeciesPage";
+import StarshipsListPage from "./ListPage/StarshipsPage";
+import VehiclesListPage from "./ListPage/VehiclesPage";
 
 export {
   HomePage,
@@ -14,4 +21,10 @@ export {
   SpeciePage,
   StarshipPage,
   VehiclePage,
+  CharactersListPage,
+  FilmsListPage,
+  PlanetsListPage,
+  SpeciesListPage,
+  StarshipsListPage,
+  VehiclesListPage,
 };
