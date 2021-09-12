@@ -15,15 +15,22 @@ import { Link as RouterLink } from "react-router-dom";
 import { Container } from "components";
 import NavLink from "./NavLink";
 
+import { FaSpaceShuttle, FaFilm } from "react-icons/fa";
+import { IoPeopleOutline, IoBusOutline } from "react-icons/io5";
+import { BiPlanet } from "react-icons/bi";
+import { GiSuspicious } from "react-icons/gi";
+import { AiFillStar } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
+
 const Links = [
-  { label: "Search", url: "/" },
-  { label: "Characters", url: "/peoples" },
-  { label: "Movies", url: "/films" },
-  { label: "Planets", url: "/planets" },
-  { label: "Species", url: "/species" },
-  { label: "Starships", url: "/starships" },
-  { label: "Vehicles", url: "/vehicles" },
-  { label: "Favorites", url: "/favorites" },
+  { label: "Search", url: "/", icon: <FiSearch /> },
+  { label: "Characters", url: "/peoples", icon: <IoPeopleOutline /> },
+  { label: "Movies", url: "/films", icon: <FaFilm /> },
+  { label: "Planets", url: "/planets", icon: <BiPlanet /> },
+  { label: "Species", url: "/species", icon: <GiSuspicious /> },
+  { label: "Starships", url: "/starships", icon: <FaSpaceShuttle /> },
+  { label: "Vehicles", url: "/vehicles", icon: <IoBusOutline /> },
+  { label: "Favorites", url: "/favorites", icon: <AiFillStar /> },
 ];
 
 const NavBar = () => {
@@ -88,15 +95,17 @@ const NavBar = () => {
           <Stack as={"nav"} spacing={4}>
             {Links.map((link, index) => (
               <NavLink key={index} to={link.url}>
-                <Box onClick={onClose}>{link.label}</Box>
+                <Flex onClick={onClose} alignItems={"center"}>
+                  <Box mr={4}>{link.icon}</Box>
+                  {link.label}
+                </Flex>
               </NavLink>
             ))}
-            <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? (
-                <MoonIcon marginRight="auto" />
-              ) : (
-                <SunIcon marginRight="auto" />
-              )}
+            <Button onClick={toggleColorMode} display={"flex"}>
+              {colorMode === "light" ? <MoonIcon mr={4} /> : <SunIcon mr={4} />}
+              <Box mr={"auto"}>
+                {colorMode === "light" ? "Toggle" : "Disable"} Dark Mode
+              </Box>
             </Button>
           </Stack>
         </Box>

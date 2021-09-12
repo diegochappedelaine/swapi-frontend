@@ -12,7 +12,7 @@ const HomePage = () => {
       <Form handleSubmit={fetchData} />
       {loading && <Loading />}
       {error && <ErrorComponent />}
-      <UnorderedList styleType={"none"} ml={0}>
+      <UnorderedList styleType={"none"} ml={0} mb={300}>
         {data?.map((element, index) => {
           const { id, dataType } = retreiveDataTypeAndIdFromUrl(element.url);
           return (
