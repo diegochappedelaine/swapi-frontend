@@ -60,6 +60,7 @@ const Form: React.FC<FormProps> = ({ handleSubmit }) => {
             _hover={{
               bg: "blue.500",
             }}
+            type="submit"
           >
             Search
           </Button>

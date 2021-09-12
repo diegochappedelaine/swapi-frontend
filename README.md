@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Getting started
 
 ```bash
-$> yarn install
+$> yarn
 $> yarn start
 ```
 
@@ -14,7 +14,7 @@ $> yarn start
 
 - React
 - TypeScript
-- @chakra-ui
+- [@chakra-ui](https://chakra-ui.com/)
 
 ## Deployment
 
