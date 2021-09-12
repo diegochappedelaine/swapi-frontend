@@ -1,10 +1,16 @@
 import { useEffect } from "react";
-import { Loading, SearchResultElement, ListPageLayout } from "components";
+import {
+  Loading,
+  SearchResultElement,
+  ListPageLayout,
+  Pagination,
+} from "components";
 import { useFetchLazy } from "hooks";
-import { API_GET_PEOPLE } from "api/end-points";
-import { GetCharacters, SwapiRessources } from "types";
 import { retreiveDataTypeAndIdFromUrl, retreiveLastParamFromUrl } from "utils";
-import { UnorderedList, Button, Center } from "@chakra-ui/react";
+import { UnorderedList } from "@chakra-ui/react";
+
+import { GetCharacters, SwapiRessources } from "types";
+import { API_GET_PEOPLE } from "api/end-points";
 
 const CharactersPage = () => {
   const { data, loading, error, fetchData } = useFetchLazy<GetCharacters>();
@@ -29,38 +35,29 @@ const CharactersPage = () => {
                 url={`/${dataType}/${id}`}
                 element={result}
                 dataType={dataType as SwapiRessources}
-              >
-                {result.name}
-              </SearchResultElement>
+              />
             );
           })}
       </UnorderedList>
       {data && (
-        <Center mb={10}>
-          <Button
-            mr={6}
-            disabled={!data.previous}
-            onClick={() =>
-              data?.previous &&
+        <Pagination
+          canPrevious={!!data?.previous}
+          canNext={!!data?.next}
+          toPrevious={() => {
+            if (data?.previous) {
               fetchData(
                 `${API_GET_PEOPLE}${retreiveLastParamFromUrl(data.previous)}`
-              )
+              );
             }
-          >
-            Prev
-          </Button>
-          <Button
-            disabled={!data.next}
-            onClick={() =>
-              data?.next &&
+          }}
+          toNext={() => {
+            if (data?.next) {
               fetchData(
                 `${API_GET_PEOPLE}${retreiveLastParamFromUrl(data.next)}`
-              )
+              );
             }
-          >
-            Next
-          </Button>
-        </Center>
+          }}
+        />
       )}
     </ListPageLayout>
   );
