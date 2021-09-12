@@ -9,7 +9,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Hello SWAPI</h1>
       <Form handleSubmit={fetchData} />
       {loading && <div>Loading...</div>}
       {error && <div>Error</div>}

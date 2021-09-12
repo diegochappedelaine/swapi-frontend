@@ -14,14 +14,11 @@ import {
   StarshipsListPage,
   VehiclesListPage,
 } from "pages";
-import { NavBar } from "components";
-import HeroBanner from "components/HeroBanner";
+import { Layout } from "components";
 
 const App = () => {
   return (
-    <>
-      <NavBar />
-      <HeroBanner />
+    <Layout>
       <Switch>
         <Route path="/planets/:id" component={PlanetPage} exact />
         <Route path="/films/:id" component={FilmPage} exact />
@@ -37,7 +34,7 @@ const App = () => {
         <Route path="/vehicles" component={VehiclesListPage} exact />
         <Route path="/" component={HomePage} />
       </Switch>
-    </>
+    </Layout>
   );
 };
 

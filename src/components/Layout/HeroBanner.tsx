@@ -6,7 +6,7 @@ const HeroBanner = () => {
     <Stack background={"black"}>
       <Container>
         <Stack direction={"row"} align={"center"}>
-          <Stack flex={{ md: "0.5", base: "1" }}>
+          <Stack flex={{ md: "0.7", base: "1" }}>
             <Heading color="white" py={40} textAlign="center">
               Browse Rebel's <br />
               secret DB

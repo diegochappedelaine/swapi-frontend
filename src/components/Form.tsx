@@ -1,3 +1,10 @@
+import {
+  Button,
+  FormControl,
+  Input,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { API_SEARCH } from "api/end-points";
 
@@ -19,10 +26,45 @@ const Form: React.FC<FormProps> = ({ handleSubmit }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input value={search} onChange={handleChange} type="text" />
-      <button type="submit">Search</button>
-    </form>
+    <>
+      <Stack
+        spacing={4}
+        w={"full"}
+        maxW={"2xl"}
+        bg={useColorModeValue("gray.100", "gray.700")}
+        rounded={"xl"}
+        boxShadow={"lg"}
+        p={6}
+        my={12}
+        mx={"auto"}
+      >
+        <FormControl
+          as="form"
+          onSubmit={onSubmit}
+          display={"flex"}
+          flexDirection={"row"}
+        >
+          <Input
+            bg={"white"}
+            placeholder="Ex: x-wing"
+            _placeholder={{ color: "gray.500" }}
+            type="text"
+            value={search}
+            onChange={handleChange}
+            mr={4}
+          />
+          <Button
+            bg={"blue.400"}
+            color={"white"}
+            _hover={{
+              bg: "blue.500",
+            }}
+          >
+            Search
+          </Button>
+        </FormControl>
+      </Stack>
+    </>
   );
 };
 

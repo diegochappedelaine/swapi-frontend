@@ -12,10 +12,11 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
-import { NavLink, Container } from "components";
+import { Container } from "components";
+import NavLink from "./NavLink";
 
 const Links = [
-  { label: "Search", url: "/" },
+  { label: "Search", url: "/peoles" },
   { label: "Characters", url: "/peoples" },
   { label: "Movies", url: "/films" },
   { label: "Planets", url: "/planets" },
@@ -31,7 +32,12 @@ const NavBar = () => {
   return (
     <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
       <Container>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Flex
+          as="header"
+          h={16}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
