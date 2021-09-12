@@ -13,6 +13,7 @@ import {
   SpeciesListPage,
   StarshipsListPage,
   VehiclesListPage,
+  FavoritePage,
 } from "pages";
 import { Layout } from "components";
 import { useScrollToTop } from "hooks";
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/species" component={SpeciesListPage} exact />
         <Route path="/starships" component={StarshipsListPage} exact />
         <Route path="/vehicles" component={VehiclesListPage} exact />
+        <Route path="/favorites" component={FavoritePage} />
         <Route path="/" component={HomePage} />
       </Switch>
     </Layout>

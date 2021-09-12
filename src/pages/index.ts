@@ -13,6 +13,8 @@ import SpeciesListPage from "./ListPage/SpeciesPage";
 import StarshipsListPage from "./ListPage/StarshipsPage";
 import VehiclesListPage from "./ListPage/VehiclesPage";
 
+import FavoritePage from "./FavoritePage";
+
 export {
   HomePage,
   CharacterPage,
@@ -27,4 +29,5 @@ export {
   SpeciesListPage,
   StarshipsListPage,
   VehiclesListPage,
+  FavoritePage,
 };

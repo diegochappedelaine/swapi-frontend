@@ -3,7 +3,7 @@ import { API_URL } from "api/end-points";
 import { Link as RouterLink } from "react-router-dom";
 import { Link, useColorModeValue, Box } from "@chakra-ui/react";
 import { SwapiRessources } from "types";
-import { DataTypeIcon } from "components";
+import { DataTypeIcon, HandleFavorite } from "components";
 
 type FetchAndDisplayElementProps = {
   dataType: string;
@@ -34,11 +34,13 @@ const FetchAndDisplayElement: React.FC<FetchAndDisplayElementProps> = ({
         textDecoration: "none",
         bg: useColorModeValue("gray.300", "gray.500"),
       }}
+      mb={4}
     >
       <Box as="span" mr={4} fontSize="lg">
         <DataTypeIcon dataType={dataType as SwapiRessources} />
       </Box>
       {data?.name || data?.title}
+      <HandleFavorite dataType={dataType} id={id} />
     </Link>
   );
 };

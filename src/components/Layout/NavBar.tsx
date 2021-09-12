@@ -23,6 +23,7 @@ const Links = [
   { label: "Species", url: "/species" },
   { label: "Starships", url: "/starships" },
   { label: "Vehicles", url: "/vehicles" },
+  { label: "Favorites", url: "/favorites" },
 ];
 
 const NavBar = () => {
@@ -63,7 +64,7 @@ const NavBar = () => {
 
             <HStack
               as={"nav"}
-              spacing={4}
+              spacing={2}
               display={{ base: "none", lg: "flex" }}
             >
               {Links.map((link, index) => (
