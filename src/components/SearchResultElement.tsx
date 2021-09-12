@@ -1,7 +1,7 @@
 import { Link, ListItem, useColorModeValue, Box } from "@chakra-ui/react";
 import { Link as RooterLink } from "react-router-dom";
 import { SwapiRessources } from "types";
-import { DataTypeIcon } from "components";
+import { DataTypeIcon, HandleFavorite } from "components";
 
 type SearchResultElementProps = {
   element: {
@@ -10,12 +10,14 @@ type SearchResultElementProps = {
   };
   url: string;
   dataType: SwapiRessources;
+  id: string;
 };
 
 const SearchResultElement: React.FC<SearchResultElementProps> = ({
   element,
   url,
   dataType,
+  id,
 }) => {
   return (
     <ListItem>
@@ -41,6 +43,7 @@ const SearchResultElement: React.FC<SearchResultElementProps> = ({
         </Box>
 
         {element?.name || element?.title}
+        <HandleFavorite id={id} dataType={dataType} />
       </Link>
     </ListItem>
   );

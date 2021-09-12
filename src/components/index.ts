@@ -12,6 +12,7 @@ import ElementFetchingSection from "./ElementFetchingSection";
 import FetchDataNameLink from "./FetchDataNameLink";
 import DataTypeIcon from "./DataTypeIcon";
 import ErrorComponent from "./ErrorComponent";
+import HandleFavorite from "./HandleFavorite";
 
 export {
   Form,
@@ -28,4 +29,5 @@ export {
   FetchDataNameLink,
   DataTypeIcon,
   ErrorComponent,
+  HandleFavorite,
 };

@@ -40,6 +40,7 @@ const ListPageContent: React.FC<ListPageContentProps> = ({
                 url={`/${dataType}/${id}`}
                 element={result}
                 dataType={dataType as SwapiRessources}
+                id={id}
               />
             );
           })}

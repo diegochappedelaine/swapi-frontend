@@ -21,6 +21,7 @@ const HomePage = () => {
               url={`/${dataType}/${id}`}
               element={element}
               dataType={dataType as SwapiRessources}
+              id={id}
             />
           );
         })}
