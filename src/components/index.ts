@@ -7,6 +7,7 @@ import ListPageLayout from "./Layout/ListPageLayout";
 import Pagination from "./Pagination";
 import ListPageContent from "./ListPageContent";
 import ElementPageLayout from "./Layout/ElementPageLayout";
+import DisplayInformationsCard from "./DisplayInformationsCard";
 
 export {
   Form,
@@ -18,4 +19,5 @@ export {
   Pagination,
   ListPageContent,
   ElementPageLayout,
+  DisplayInformationsCard,
 };

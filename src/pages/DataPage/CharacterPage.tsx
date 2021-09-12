@@ -2,8 +2,11 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "hooks";
 import { API_GET_PEOPLE } from "api/end-points";
 import { Character } from "types";
-import { ElementPageLayout, Loading } from "components";
-import { UnorderedList, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  ElementPageLayout,
+  Loading,
+  DisplayInformationsCard,
+} from "components";
 
 const CharacterPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -23,30 +26,11 @@ const CharacterPage = () => {
     { label: "Skin color", value: character?.skin_color },
   ];
 
-  console.log(character);
-
   return (
     <ElementPageLayout title={character?.name || ""}>
       {loading && <Loading />}
       {error && <p>Error</p>}
-      <UnorderedList
-        styleType={"none"}
-        maxW={"xl"}
-        mx={"auto"}
-        bg={useColorModeValue("gray.200", "gray.700")}
-        px={20}
-        py={10}
-        rounded={"lg"}
-      >
-        {formatedData.map(({ label, value }, index) => (
-          <Flex key={index} mb={1}>
-            <Text fontWeight={500} mr={1}>
-              {`${label} :`}
-            </Text>
-            <Text>{value || "N/A"}</Text>
-          </Flex>
-        ))}
-      </UnorderedList>
+      <DisplayInformationsCard informations={formatedData} />
     </ElementPageLayout>
   );
 };
