@@ -9,7 +9,7 @@ const ElementPageLayout: React.FC<ElementPageLayoutProps> = ({
   children,
 }) => {
   return (
-    <Flex flexDir={"column"}>
+    <Flex flexDir={"column"} mb={32}>
       <Heading mt={4} mb={8} as="h1" textAlign="center">
         {title}
       </Heading>

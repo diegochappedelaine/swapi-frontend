@@ -8,6 +8,7 @@ import {
   Loading,
   DisplayInformationsCard,
   ElementFetchingSection,
+  ErrorComponent,
 } from "components";
 
 const CharacterPage = () => {
@@ -28,26 +29,24 @@ const CharacterPage = () => {
     { label: "Skin color", value: character?.skin_color },
   ];
 
-  console.log(character);
-
   return (
     <ElementPageLayout title={character?.name || ""}>
       {loading && <Loading />}
-      {error && <p>Error</p>}
+      {error && <ErrorComponent />}
       <DisplayInformationsCard informations={formatedData} />
-      {character?.starships.length!! && (
+      {!!character?.starships.length && (
         <ElementFetchingSection
           sectionName={`${character.name}'s Ships`}
           urls={character.starships}
         />
       )}
-      {character?.films.length!! && (
+      {!!character?.films.length!! && (
         <ElementFetchingSection
           sectionName={`${character.name}'s Films appearance`}
           urls={character.films}
         />
       )}
-      {character?.homeworld.length!! && (
+      {!!character?.homeworld.length && (
         <ElementFetchingSection
           sectionName={`${character.name}'s Homeworld`}
           urls={[character.homeworld]}

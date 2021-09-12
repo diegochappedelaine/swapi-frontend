@@ -1,4 +1,4 @@
-import { Form, Loading, SearchResultElement } from "components";
+import { ErrorComponent, Form, Loading, SearchResultElement } from "components";
 import { useFetchLazy } from "hooks";
 import { SearchResult, SwapiRessources } from "types";
 import { retreiveDataTypeAndIdFromUrl } from "utils";
@@ -11,7 +11,7 @@ const HomePage = () => {
     <div>
       <Form handleSubmit={fetchData} />
       {loading && <Loading />}
-      {error && <div>Error</div>}
+      {error && <ErrorComponent />}
       <UnorderedList styleType={"none"} ml={0}>
         {data?.map((element, index) => {
           const { id, dataType } = retreiveDataTypeAndIdFromUrl(element.url);

@@ -2,11 +2,15 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "hooks";
 import { API_GET_PLANET } from "api/end-points";
 import { Planet } from "types";
+
 import {
   ElementPageLayout,
   Loading,
   DisplayInformationsCard,
+  ElementFetchingSection,
+  ErrorComponent,
 } from "components";
+
 const PlanetPage = () => {
   const { id } = useParams<{ id: string }>();
   const {
@@ -27,13 +31,23 @@ const PlanetPage = () => {
     { label: "Water surface", value: planet?.surface_water },
   ];
 
-  console.log(planet);
-
   return (
     <ElementPageLayout title={planet?.name || ""}>
       {loading && <Loading />}
-      {error && <p>Error</p>}
+      {error && <ErrorComponent />}
       <DisplayInformationsCard informations={formatedData} />
+      {!!planet?.films.length && (
+        <ElementFetchingSection
+          sectionName={`Movies including ${planet.name}`}
+          urls={planet.films}
+        />
+      )}
+      {!!planet?.residents.length && (
+        <ElementFetchingSection
+          sectionName={`Residents of ${planet.name}`}
+          urls={planet.residents}
+        />
+      )}
     </ElementPageLayout>
   );
 };

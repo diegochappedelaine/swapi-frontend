@@ -11,6 +11,7 @@ import DisplayInformationsCard from "./DisplayInformationsCard";
 import ElementFetchingSection from "./ElementFetchingSection";
 import FetchDataNameLink from "./FetchDataNameLink";
 import DataTypeIcon from "./DataTypeIcon";
+import ErrorComponent from "./ErrorComponent";
 
 export {
   Form,
@@ -26,4 +27,5 @@ export {
   ElementFetchingSection,
   FetchDataNameLink,
   DataTypeIcon,
+  ErrorComponent,
 };

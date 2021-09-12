@@ -8,8 +8,8 @@ export const API_GET_PEOPLE = `${API_URL}/people`;
 
 export const API_GET_PLANET = `${API_URL}/planets`;
 
-export const API_GET_SPECIE = `${API_URL}/specie`;
+export const API_GET_SPECIE = `${API_URL}/species`;
 
 export const API_GET_STARSHIP = `${API_URL}/starships`;
 
-export const API_GET_VEHICULE = `${API_URL}/vehicle`;
+export const API_GET_VEHICULE = `${API_URL}/vehicles`;

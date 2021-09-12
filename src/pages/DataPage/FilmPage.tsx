@@ -6,6 +6,8 @@ import {
   ElementPageLayout,
   Loading,
   DisplayInformationsCard,
+  ElementFetchingSection,
+  ErrorComponent,
 } from "components";
 import { Text } from "@chakra-ui/react";
 
@@ -32,11 +34,41 @@ const FilmPage = () => {
   return (
     <ElementPageLayout title={film?.title || ""}>
       {loading && <Loading />}
-      {error && <p>Error</p>}
+      {error && <ErrorComponent />}
       <Text maxW={"lg"} mx={"auto"} textAlign={"center"} mb={8}>
         {film?.opening_crawl}
       </Text>
       <DisplayInformationsCard informations={formatedData} />
+      {!!film?.characters.length && (
+        <ElementFetchingSection
+          sectionName={`${film.title}'s characters`}
+          urls={film.characters}
+        />
+      )}
+      {!!film?.planets.length && (
+        <ElementFetchingSection
+          sectionName={`${film.title}'s planets`}
+          urls={film.planets}
+        />
+      )}
+      {!!film?.starships.length && (
+        <ElementFetchingSection
+          sectionName={`${film.title}'s starships`}
+          urls={film.starships}
+        />
+      )}
+      {!!film?.vehicles.length && (
+        <ElementFetchingSection
+          sectionName={`${film.title}'s vehicles`}
+          urls={film.vehicles}
+        />
+      )}
+      {!!film?.species.length && (
+        <ElementFetchingSection
+          sectionName={`${film.title}'s species`}
+          urls={film.species}
+        />
+      )}
     </ElementPageLayout>
   );
 };

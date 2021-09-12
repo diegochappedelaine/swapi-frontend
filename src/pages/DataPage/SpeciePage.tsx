@@ -2,10 +2,13 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "hooks";
 import { API_GET_SPECIE } from "api/end-points";
 import { Specie } from "types";
+
 import {
   ElementPageLayout,
   Loading,
   DisplayInformationsCard,
+  ElementFetchingSection,
+  ErrorComponent,
 } from "components";
 
 const SpeciePage = () => {
@@ -31,8 +34,20 @@ const SpeciePage = () => {
   return (
     <ElementPageLayout title={specie?.name || ""}>
       {loading && <Loading />}
-      {error && <p>Error</p>}
+      {error && <ErrorComponent />}
       <DisplayInformationsCard informations={formatedData} />
+      {!!specie?.people.length && (
+        <ElementFetchingSection
+          sectionName={`Known ${specie.name}s`}
+          urls={specie.people}
+        />
+      )}
+      {!!specie?.films.length && (
+        <ElementFetchingSection
+          sectionName={`${specie.name}s appearance`}
+          urls={specie.films}
+        />
+      )}
     </ElementPageLayout>
   );
 };

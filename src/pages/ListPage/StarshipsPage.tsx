@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ListPageContent } from "components";
+import { ListPageContent, ErrorComponent } from "components";
 import { useFetchLazy } from "hooks";
 import { GetStarships } from "types";
 import { API_GET_STARSHIP } from "api/end-points";
@@ -12,7 +12,7 @@ const PlanetsPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (error) return <p>Error</p>;
+  if (error) return <ErrorComponent />;
   return (
     <ListPageContent
       data={data}

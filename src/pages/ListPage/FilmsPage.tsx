@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ListPageContent } from "components";
+import { ListPageContent, ErrorComponent } from "components";
 import { useFetchLazy } from "hooks";
 import { GetFilms } from "types";
 import { API_GET_FILM } from "api/end-points";
@@ -12,7 +12,7 @@ const FilmsPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (error) return <p>Error</p>;
+  if (error) return <ErrorComponent />;
 
   return (
     <ListPageContent
