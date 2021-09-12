@@ -4,7 +4,7 @@ function useFetchLazy<T = unknown>(): {
   error: unknown;
   loading: boolean;
   data: T | undefined;
-  fetchData: (url: string) => Promise<void>;
+  fetchData: (url: string) => Promise<() => void>;
 } {
   const [error, setError] = useState<unknown>();
   const [loading, setLoading] = useState<boolean>(false);
@@ -19,7 +19,11 @@ function useFetchLazy<T = unknown>(): {
     } catch (error) {
       setError(error);
     }
-    setLoading(false);
+    const timeout = setTimeout(() => setLoading(false), 200);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   };
   return { error, loading, data, fetchData };
 }

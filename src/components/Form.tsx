@@ -9,7 +9,7 @@ import { useState } from "react";
 import { API_SEARCH } from "api/end-points";
 
 type FormProps = {
-  handleSubmit: (url: string) => Promise<void>;
+  handleSubmit: (url: string) => Promise<() => void>;
 };
 
 const Form: React.FC<FormProps> = ({ handleSubmit }) => {

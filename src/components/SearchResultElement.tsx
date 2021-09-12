@@ -49,6 +49,7 @@ const SearchResultElement: React.FC<SearchResultElementProps> = ({
         mx={"auto"}
         p={4}
         maxW={"4xl"}
+        w={"full"}
         display={"flex"}
         alignItems={"center"}
         bg={useColorModeValue("gray.200", "gray.700")}
