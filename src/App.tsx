@@ -15,8 +15,10 @@ import {
   VehiclesListPage,
 } from "pages";
 import { Layout } from "components";
+import { useScrollToTop } from "hooks";
 
 const App = () => {
+  useScrollToTop();
   return (
     <Layout>
       <Switch>

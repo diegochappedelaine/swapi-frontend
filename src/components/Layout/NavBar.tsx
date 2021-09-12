@@ -16,7 +16,7 @@ import { Container } from "components";
 import NavLink from "./NavLink";
 
 const Links = [
-  { label: "Search", url: "/peoles" },
+  { label: "Search", url: "/" },
   { label: "Characters", url: "/peoples" },
   { label: "Movies", url: "/films" },
   { label: "Planets", url: "/planets" },
