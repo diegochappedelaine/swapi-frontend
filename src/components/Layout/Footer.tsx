@@ -2,10 +2,9 @@ import {
   Box,
   Container,
   Stack,
-  Text,
   useColorModeValue,
+  Link,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 
 const PageFooter = () => {
   return (
@@ -24,8 +23,14 @@ const PageFooter = () => {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <Link to="https://swapi.dev/">Swapi</Link>
-        <Link to="https://github.com/diegochappedelaine">
+        <Link href="https://swapi.dev/" target="_blank" rel="noopener">
+          Made using Swapi
+        </Link>
+        <Link
+          href="https://github.com/diegochappedelaine"
+          target="_blank"
+          rel="noopener"
+        >
           @diegochappedelaine
         </Link>
       </Container>

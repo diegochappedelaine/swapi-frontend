@@ -52,6 +52,7 @@ const Form: React.FC<FormProps> = ({ handleSubmit }) => {
             value={search}
             onChange={handleChange}
             mr={4}
+            color={"gray.700"}
           />
           <Button
             bg={"blue.400"}

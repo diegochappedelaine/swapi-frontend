@@ -1,8 +1,8 @@
-import { Form } from "components";
+import { Form, Loading, SearchResultElement } from "components";
 import { useFetchLazy } from "hooks";
-import { Link } from "react-router-dom";
-import { SearchResult } from "types";
+import { SearchResult, SwapiRessources } from "types";
 import { retreiveDataTypeAndIdFromUrl } from "utils";
+import { UnorderedList } from "@chakra-ui/react";
 
 const HomePage = () => {
   const { data, loading, error, fetchData } = useFetchLazy<SearchResult>();
@@ -10,20 +10,21 @@ const HomePage = () => {
   return (
     <div>
       <Form handleSubmit={fetchData} />
-      {loading && <div>Loading...</div>}
+      {loading && <Loading />}
       {error && <div>Error</div>}
-      <ul>
+      <UnorderedList styleType={"none"} ml={0}>
         {data?.map((element, index) => {
           const { id, dataType } = retreiveDataTypeAndIdFromUrl(element.url);
           return (
-            <li key={index}>
-              <Link to={`/${dataType}/${id}`}>
-                {element?.name || element?.title}
-              </Link>
-            </li>
+            <SearchResultElement
+              key={index}
+              url={`/${dataType}/${id}`}
+              element={element}
+              dataType={dataType as SwapiRessources}
+            />
           );
         })}
-      </ul>
+      </UnorderedList>
     </div>
   );
 };

@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/films/:id" component={FilmPage} exact />
         <Route path="/vehicles/:id" component={VehiclePage} exact />
         <Route path="/starships/:id" component={StarshipPage} exact />
-        <Route path="/people/id" component={CharacterPage} exact />
+        <Route path="/people/:id" component={CharacterPage} exact />
         <Route path="/species/:id" component={SpeciePage} exact />
         <Route path="/peoples" component={CharactersListPage} exact />
         <Route path="/films" component={FilmsListPage} exact />
