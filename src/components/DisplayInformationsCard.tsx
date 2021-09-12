@@ -23,7 +23,7 @@ const DisplayInformationsCard: React.FC<DisplayInformationsCardProps> = ({
       px={{ base: 5, lg: 20 }}
       py={10}
       rounded={"lg"}
-      mb={32}
+      mb={8}
     >
       {informations.map(({ label, value }, index) => (
         <Flex key={index} mb={1}>

@@ -2,10 +2,12 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "hooks";
 import { API_GET_PEOPLE } from "api/end-points";
 import { Character } from "types";
+
 import {
   ElementPageLayout,
   Loading,
   DisplayInformationsCard,
+  ElementFetchingSection,
 } from "components";
 
 const CharacterPage = () => {
@@ -26,11 +28,31 @@ const CharacterPage = () => {
     { label: "Skin color", value: character?.skin_color },
   ];
 
+  console.log(character);
+
   return (
     <ElementPageLayout title={character?.name || ""}>
       {loading && <Loading />}
       {error && <p>Error</p>}
       <DisplayInformationsCard informations={formatedData} />
+      {character?.starships.length!! && (
+        <ElementFetchingSection
+          sectionName={`${character.name}'s Ships`}
+          urls={character.starships}
+        />
+      )}
+      {character?.films.length!! && (
+        <ElementFetchingSection
+          sectionName={`${character.name}'s Films appearance`}
+          urls={character.films}
+        />
+      )}
+      {character?.homeworld.length!! && (
+        <ElementFetchingSection
+          sectionName={`${character.name}'s Homeworld`}
+          urls={[character.homeworld]}
+        />
+      )}
     </ElementPageLayout>
   );
 };

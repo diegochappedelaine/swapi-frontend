@@ -8,6 +8,9 @@ import Pagination from "./Pagination";
 import ListPageContent from "./ListPageContent";
 import ElementPageLayout from "./Layout/ElementPageLayout";
 import DisplayInformationsCard from "./DisplayInformationsCard";
+import ElementFetchingSection from "./ElementFetchingSection";
+import FetchDataNameLink from "./FetchDataNameLink";
+import DataTypeIcon from "./DataTypeIcon";
 
 export {
   Form,
@@ -20,4 +23,7 @@ export {
   ListPageContent,
   ElementPageLayout,
   DisplayInformationsCard,
+  ElementFetchingSection,
+  FetchDataNameLink,
+  DataTypeIcon,
 };
