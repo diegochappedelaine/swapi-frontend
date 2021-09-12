@@ -1,9 +1,16 @@
 import { Container } from "components";
-import { Stack, Heading, Image, Box } from "@chakra-ui/react";
+import {
+  Stack,
+  Heading,
+  Image,
+  Box,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { Destroyer } from "assets";
 
 const HeroBanner = () => {
   return (
-    <Stack background={"black"}>
+    <Stack background={useColorModeValue("gray.900", "black")}>
       <Container>
         <Stack direction={"row"} align={"center"}>
           <Stack flex={{ md: "0.7", base: "1" }}>
@@ -13,10 +20,7 @@ const HeroBanner = () => {
             </Heading>
           </Stack>
           <Box flex="1" display={{ base: "none", md: "flex" }}>
-            <Image
-              src="https://images3.alphacoders.com/115/thumb-1920-115035.jpg"
-              alt="Imperial Star Destroyer"
-            />
+            <Image src={Destroyer} alt="Imperial Star Destroyer" />
           </Box>
         </Stack>
       </Container>
