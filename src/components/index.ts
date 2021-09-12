@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import SearchResultElement from "./SearchResultElement";
 import ListPageLayout from "./Layout/ListPageLayout";
 import Pagination from "./Pagination";
+import ListPageContent from "./ListPageContent";
 
 export {
   Form,
@@ -14,4 +15,5 @@ export {
   SearchResultElement,
   ListPageLayout,
   Pagination,
+  ListPageContent,
 };
